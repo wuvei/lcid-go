@@ -3,11 +3,11 @@
 
 This naive toy is based on [bunnyxt/lcid](https://github.com/bunnyxt/lcid), and implemented in Golang for practice. They are same in program logic and static files. Thanks bunnyxt!
 
-I deployed this toy on [lcid.yczheng.top](lcid.yczheng.top). 
+I deployed this toy on [lcid.yczheng.top](https://lcid.yczheng.top). 
 
 - For Leetcode problems on the global site, type `lcid.yczheng.top/<problem_id>` in your browser.
 - For problems on the Chinese site, type `lcid.yczheng.top/cn/<problem_id>`.
-- Or you can enter [lcid.yczheng.top](lcid.yczheng.top) to have fun.
+- Or you can enter [lcid.yczheng.top](https://lcid.yczheng.top) to have fun.
 
 ## Development
 
