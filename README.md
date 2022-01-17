@@ -61,6 +61,8 @@ Just start the backend server and setup your nginx config.
 Optional: `crontab -e`  add the task of fetching provblem list to scheduled lists, eg.
 
  ```
- 5 2 * * * cd /root/lcid-go && /usr/local/go/bin/go run problem.go # Fetch Problem.
+ 5 2 * * * cd /root/lcid-go && /usr/local/go/bin/go run problem.go > ~/fetchlog.txt # Fetch Problem.
+ 12 2 * * * cd /root/lcid-go && ./lcid_restart.sh
  ```
 
+Note: in `lcid_restart.sh`, I assume that there's only 1 go program executing. 
