@@ -1,0 +1,19 @@
+[Unit]
+Description=LCid-go Service
+ConditionPathExists=/root/lcid-go
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/lcid-go
+ExecStart=/usr/local/go/bin/go run ./main.go
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=lcidgoservice
+
+[Install]
+WantedBy=multi-user.target

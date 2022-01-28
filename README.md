@@ -48,13 +48,13 @@ Now you can try the following endpoints. All of them should work correctly.
 - `localhost:<port>/cn/1`
 - `localhost:<port>/info/1`
 
-### Deployment
-
-#### Heroku
+### Deployment on Heroic
 
 Please refer to [bunnyxt/lcid#deployment](https://github.com/bunnyxt/lcid#deployment).
 
-#### Custom Server
+### Deployment on Custom Server
+
+#### Nohup
 
 Just start the backend server and setup your nginx config.
 
@@ -66,3 +66,18 @@ Optional: `crontab -e`  add the task of fetching provblem list to scheduled list
  ```
 
 Note: in `lcid_restart.sh`, I assume that there's only 1 go program executing. 
+
+#### Systemd Service (Recommended)
+
+Refer to [lcid-go.service](./lcid-go.service) 
+
+Suppose you are user `root`, you could copy the `lcid-go.service` to `/usr/lib/systemd/system/`.
+
+Then with `systemctl start lcid-go.serrvice`, the program is up.
+
+`systemctl start lcid-go.serrvice` will add lcid-go to startup programs. Then cron jobs can be write as:
+
+ ```
+ 5 2 * * * cd /root/lcid-go && /usr/local/go/bin/go run problem.go > ~/fetchlog.txt # Fetch Problem.
+ 12 2 * * * systemctl restart lcid-go
+ ```
