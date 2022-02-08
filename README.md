@@ -81,3 +81,11 @@ Then with `systemctl start lcid-go.serrvice`, the program is up.
  5 2 * * * cd /root/lcid-go && /usr/local/go/bin/go run problem.go > ~/fetchlog.txt # Fetch Problem.
  12 2 * * * systemctl restart lcid-go
  ```
+
+## Alfred
+
+If you're using MacOS and have access to Alfred powerpack, you could make use of the `LCid.alfredworkflow`, which is quite simple:
+
+1. Press `option + space` or something else to revoke Alfred;
+
+2. Input `lc <prob-id>` or `lcn <prob-id>` to open corresponding url in your default browser.
