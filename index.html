@@ -24,7 +24,7 @@
 <div style="margin: 0 auto; padding: 24px; max-width: 800px">
 <h1><span class="color-l">L</span><span class="color-c">C</span><span class="color-id">id</span>-Go: access <span class="color-l">L</span>eet<span class="color-c">C</span>ode problems via <span class="color-id">id</span></h1>
 <h2 style="text-align: center;font-size: 1.3em;">Go Implementation</h2>
-<p>Known LeetCode problem id, but don't know how to get there? Just add <code>/&lt;problem-id&gt;</code> at the end of <code>lcid.yczheng.top</code>, then the browser will redirect you to the problem page.</p>
+<p>Known LeetCode problem id, but don't know how to get there? Just add <code>/&lt;problem-id&gt;</code> at the end of <code id="url1"></code>, then the browser will redirect you to the problem page.</p>
 <p><label>Enter problem id here: </label><input id="id-input" placeholder="e.g. 1 or 146" style="margin-left: 12px" oninput="updateLinkId(this.value)"/></p>
 <ul>
   <li>Redirect to LeetCode problem page (global): <a id="link-global" target="_blank"></a></li>
@@ -40,16 +40,18 @@ var id_input = document.getElementById('id-input');
 var link_global = document.getElementById('link-global');
 var link_china = document.getElementById('link-china');
 var link_info = document.getElementById('link-info');
+var url = 'https://lcid.boke.wiki'; //'http://localhost:9191/';
+document.getElementById('url1').innerText = url;
 
 function updateLinkId(problem_id) {
-  link_global.setAttribute('href', 'https://lcid.yczheng.top/' + problem_id);
-  link_global.innerText = 'lcid.yczheng.top/' + problem_id;
+  link_global.setAttribute('href', url + problem_id);
+  link_global.innerText = url + problem_id;
 
-  link_china.setAttribute('href', 'https://lcid.yczheng.top/cn/' + problem_id);
-  link_china.innerText = 'lcid.yczheng.top/cn/' + problem_id;
+  link_china.setAttribute('href', url + 'cn/' + problem_id);
+  link_china.innerText = url + 'cn/' + problem_id;
 
-  link_info.setAttribute('href', 'https://lcid.yczheng.top/info/' + problem_id);
-  link_info.innerText = 'lcid.yczheng.top/info/' + problem_id;
+  link_info.setAttribute('href', url + 'info/' + problem_id);
+  link_info.innerText = url + 'info/' + problem_id;
 }
 
 // init id with random number
