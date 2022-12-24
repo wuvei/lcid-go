@@ -40,8 +40,9 @@ var id_input = document.getElementById('id-input');
 var link_global = document.getElementById('link-global');
 var link_china = document.getElementById('link-china');
 var link_info = document.getElementById('link-info');
-var url = 'https://lcid.boke.wiki'; //'http://localhost:9191/';
-document.getElementById('url1').innerText = url;
+var url = 'https://lcid.boke.wiki/'; //'http://localhost:9191/';
+url = url.replace(/\/?$/, '/');
+document.getElementById('url1').innerText = url.replace(/\/$/, "");
 
 function updateLinkId(problem_id) {
   link_global.setAttribute('href', url + problem_id);
